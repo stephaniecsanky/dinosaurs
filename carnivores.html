@@ -1,0 +1,17 @@
+---
+layout: default
+---
+
+<h1>Carnivores</h1>
+	<ul class="dino-list">
+		{% for dino in site.pages %} <!-- This is a loop, to repeat an element, we are repeating the li so every single dino is mentioned -->
+			{% if dino.category == "carnivore" %} <!-- This is specifying that we only want dino titles from the carnivore group/folder -->
+				<li>
+					<figure>
+					<img src="img/{{dino.thumb}}" alt="">
+						<figcaption>{{dino.name}}</figcaption>
+					</figure>
+				</li>  <!-- This data is from the markdown it tells the program to search a file and then the variable. You can either do a tite that is relevant or just file or page and then the variable you're wanting to focus on (e.g. title of a dinosaur). -->
+			{% endif %}
+		{% endfor %}
+	</ul>
